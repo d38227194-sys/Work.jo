@@ -8,13 +8,13 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>CV Builder | Professional Resume</title>
+<title>Professional CV Builder | Jordan Jobs</title>
 
 <style>
 
-/* =========================================
+/* =====================================================
    VARIABLES
-========================================= */
+===================================================== */
 
 :root{
     --bg:#f4f4f4;
@@ -41,9 +41,9 @@ body.dark{
 }
 
 
-/* =========================================
+/* =====================================================
    GLOBAL
-========================================= */
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -58,13 +58,15 @@ body{
     margin:0;
     background:var(--bg);
     color:var(--text);
-    transition:background .25s, color .25s;
+    transition:
+        background .25s,
+        color .25s;
 }
 
 
-/* =========================================
+/* =====================================================
    HEADER
-========================================= */
+===================================================== */
 
 header{
     background:#000;
@@ -86,9 +88,9 @@ header p{
 }
 
 
-/* =========================================
-   THEME BUTTON
-========================================= */
+/* =====================================================
+   DARK MODE BUTTON
+===================================================== */
 
 .theme-btn{
     position:absolute;
@@ -116,27 +118,27 @@ header p{
 }
 
 
-/* =========================================
+/* =====================================================
    CONTAINER
-========================================= */
+===================================================== */
 
 .container{
-    max-width:1250px;
+    max-width:1300px;
     margin:30px auto;
     padding:0 15px;
 }
 
 
-/* =========================================
+/* =====================================================
    GRID
-========================================= */
+===================================================== */
 
 .grid{
     display:grid;
 
     grid-template-columns:
-        minmax(300px, 1fr)
-        minmax(300px, 1fr);
+        minmax(320px,1fr)
+        minmax(320px,1fr);
 
     gap:25px;
 
@@ -144,9 +146,9 @@ header p{
 }
 
 
-/* =========================================
+/* =====================================================
    CARDS
-========================================= */
+===================================================== */
 
 .card{
     background:var(--card);
@@ -165,13 +167,14 @@ header p{
 .card h2{
     margin-top:0;
     margin-bottom:20px;
+
     font-size:21px;
 }
 
 
-/* =========================================
+/* =====================================================
    FORM
-========================================= */
+===================================================== */
 
 label{
     display:block;
@@ -184,8 +187,7 @@ label{
 }
 
 input,
-textarea,
-select{
+textarea{
 
     width:100%;
 
@@ -207,8 +209,7 @@ select{
 }
 
 input:focus,
-textarea:focus,
-select:focus{
+textarea:focus{
     border-color:var(--text);
 }
 
@@ -218,9 +219,9 @@ textarea{
 }
 
 
-/* =========================================
+/* =====================================================
    BUTTONS
-========================================= */
+===================================================== */
 
 button{
     border:none;
@@ -259,9 +260,9 @@ button:hover{
 }
 
 
-/* =========================================
+/* =====================================================
    CV
-========================================= */
+===================================================== */
 
 .cv{
     background:#fff;
@@ -280,9 +281,9 @@ button:hover{
 }
 
 
-/* =========================================
+/* =====================================================
    CV HEADER
-========================================= */
+===================================================== */
 
 .cv-header{
     border-bottom:3px solid #111;
@@ -316,10 +317,14 @@ button:hover{
     line-height:1.8;
 }
 
+.cv-contact a{
+    color:#111;
+}
 
-/* =========================================
+
+/* =====================================================
    CV SECTIONS
-========================================= */
+===================================================== */
 
 .cv-section{
     margin-bottom:28px;
@@ -344,9 +349,9 @@ button:hover{
 }
 
 
-/* =========================================
-   EXPERIENCE / EDUCATION
-========================================= */
+/* =====================================================
+   CV ITEMS
+===================================================== */
 
 .cv-item{
     margin-bottom:18px;
@@ -369,13 +374,15 @@ button:hover{
 }
 
 
-/* =========================================
+/* =====================================================
    SKILLS
-========================================= */
+===================================================== */
 
 .skills{
     display:flex;
+
     flex-wrap:wrap;
+
     gap:7px;
 }
 
@@ -393,13 +400,45 @@ button:hover{
 }
 
 
-/* =========================================
-   JOB SEARCH
-========================================= */
+/* =====================================================
+   JORDAN JOB SEARCH
+===================================================== */
 
 .jobs-area{
     margin-top:20px;
 }
+
+.jobs-intro{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+
+/* Job Search Box */
+
+.job-search-box{
+
+    background:var(--soft);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-bottom:20px;
+}
+
+.job-search-box label{
+    margin-top:0;
+}
+
+
+/* Job Cards */
 
 .job{
 
@@ -432,17 +471,44 @@ button:hover{
 }
 
 .job a{
+
+    display:inline-block;
+
     color:var(--text);
 
     font-weight:bold;
 
     text-decoration:underline;
+
+    margin-top:5px;
 }
 
 
-/* =========================================
+/* =====================================================
+   OFFICIAL BADGE
+===================================================== */
+
+.official{
+
+    display:inline-block;
+
+    background:#111;
+
+    color:#fff;
+
+    padding:4px 8px;
+
+    border-radius:5px;
+
+    font-size:11px;
+
+    margin-bottom:8px;
+}
+
+
+/* =====================================================
    DEVELOPER FOOTER
-========================================= */
+===================================================== */
 
 .developer-footer{
 
@@ -460,9 +526,9 @@ button:hover{
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media(max-width:850px){
 
@@ -513,9 +579,9 @@ button:hover{
 }
 
 
-/* =========================================
-   PRINT / PDF
-========================================= */
+/* =====================================================
+   PRINT
+===================================================== */
 
 @media print{
 
@@ -564,30 +630,30 @@ button:hover{
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      HEADER
-========================================= -->
+===================================================== -->
 
 <header>
 
-    <button
-        class="theme-btn"
-        id="themeButton"
-        onclick="toggleTheme()">
+<button
+    class="theme-btn"
+    id="themeButton"
+    onclick="toggleTheme()">
 
-        🌙 Dark Mode
+    🌙 Dark Mode
 
-    </button>
-
-
-    <h1>
-        Professional CV Builder
-    </h1>
+</button>
 
 
-    <p>
-        Create your professional CV and find relevant job opportunities
-    </p>
+<h1>
+    Professional CV Builder
+</h1>
+
+
+<p>
+    Create your professional CV and find job opportunities in Jordan
+</p>
 
 </header>
 
@@ -598,9 +664,9 @@ button:hover{
 <div class="grid">
 
 
-<!-- =========================================
-     LEFT SIDE - FORM
-========================================= -->
+<!-- =====================================================
+     LEFT SIDE
+===================================================== -->
 
 <div class="form-area">
 
@@ -694,7 +760,7 @@ button:hover{
 
 
 
-<!-- PROFESSIONAL SUMMARY -->
+<!-- SUMMARY -->
 
 <div class="card">
 
@@ -704,14 +770,14 @@ button:hover{
 
 <textarea
     id="summary"
-    placeholder="Write a short professional summary about yourself..."
+    placeholder="Write a short professional summary..."
     oninput="updateCV()"></textarea>
 
 </div>
 
 
 
-<!-- WORK EXPERIENCE -->
+<!-- EXPERIENCE -->
 
 <div class="card">
 
@@ -819,6 +885,7 @@ button:hover{
     🛠 Skills
 </h2>
 
+
 <label>
     Skills
 </label>
@@ -828,6 +895,7 @@ button:hover{
     type="text"
     placeholder="HTML, CSS, JavaScript, Python, Communication"
     oninput="updateCV()">
+
 
 <p style="font-size:13px;color:var(--muted);">
     Separate each skill with a comma.
@@ -844,6 +912,7 @@ button:hover{
 <h2>
     🌐 Languages
 </h2>
+
 
 <label>
     Languages
@@ -866,6 +935,7 @@ button:hover{
 <h2>
     🚀 Projects
 </h2>
+
 
 <label>
     Project Name
@@ -928,12 +998,14 @@ button:hover{
 
 
 
-<!-- =========================================
-     RIGHT SIDE - CV PREVIEW
-========================================= -->
+<!-- =====================================================
+     RIGHT SIDE
+===================================================== -->
 
 <div>
 
+
+<!-- CV PREVIEW -->
 
 <div class="card">
 
@@ -945,30 +1017,29 @@ button:hover{
 <div class="cv" id="cv">
 
 
-<!-- CV HEADER -->
-
 <div class="cv-header">
 
-    <h1 id="cvName">
-        Your Name
-    </h1>
-
-    <div
-        class="cv-title"
-        id="cvTitle">
-
-        Your Target Job Title
-
-    </div>
+<h1 id="cvName">
+    Your Name
+</h1>
 
 
-    <div
-        class="cv-contact"
-        id="cvContact">
+<div
+    class="cv-title"
+    id="cvTitle">
 
-        Email • Phone • Location
+    Your Target Job Title
 
-    </div>
+</div>
+
+
+<div
+    class="cv-contact"
+    id="cvContact">
+
+    Email • Phone • Location
+
+</div>
 
 </div>
 
@@ -980,13 +1051,13 @@ button:hover{
     class="cv-section"
     id="summarySection">
 
-    <h3>
-        Professional Summary
-    </h3>
+<h3>
+    Professional Summary
+</h3>
 
-    <p id="cvSummary">
-        Your professional summary will appear here.
-    </p>
+<p id="cvSummary">
+    Your professional summary will appear here.
+</p>
 
 </div>
 
@@ -998,37 +1069,41 @@ button:hover{
     class="cv-section"
     id="experienceSection">
 
-    <h3>
-        Work Experience
-    </h3>
+<h3>
+    Work Experience
+</h3>
 
-    <div class="cv-item">
 
-        <h4 id="cvJobTitle">
-            Job Title
-        </h4>
+<div class="cv-item">
 
-        <div
-            class="company"
-            id="cvCompany">
+<h4 id="cvJobTitle">
+    Job Title
+</h4>
 
-            Company
 
-        </div>
+<div
+    class="company"
+    id="cvCompany">
 
-        <div
-            class="date"
-            id="cvWorkDate">
+    Company
 
-            Work Period
+</div>
 
-        </div>
 
-        <p id="cvExperience">
-            Your work experience will appear here.
-        </p>
+<div
+    class="date"
+    id="cvWorkDate">
 
-    </div>
+    Work Period
+
+</div>
+
+
+<p id="cvExperience">
+    Your work experience will appear here.
+</p>
+
+</div>
 
 </div>
 
@@ -1040,33 +1115,36 @@ button:hover{
     class="cv-section"
     id="educationSection">
 
-    <h3>
-        Education
-    </h3>
+<h3>
+    Education
+</h3>
 
-    <div class="cv-item">
 
-        <h4 id="cvDegree">
-            Degree / Qualification
-        </h4>
+<div class="cv-item">
 
-        <div
-            class="company"
-            id="cvUniversity">
+<h4 id="cvDegree">
+    Degree / Qualification
+</h4>
 
-            School / University
 
-        </div>
+<div
+    class="company"
+    id="cvUniversity">
 
-        <div
-            class="date"
-            id="cvEducationDate">
+    School / University
 
-            Education Period
+</div>
 
-        </div>
 
-    </div>
+<div
+    class="date"
+    id="cvEducationDate">
+
+    Education Period
+
+</div>
+
+</div>
 
 </div>
 
@@ -1078,19 +1156,20 @@ button:hover{
     class="cv-section"
     id="skillsSection">
 
-    <h3>
-        Skills
-    </h3>
+<h3>
+    Skills
+</h3>
 
-    <div
-        class="skills"
-        id="cvSkills">
 
-        <span>
-            Your Skills
-        </span>
+<div
+    class="skills"
+    id="cvSkills">
 
-    </div>
+<span>
+    Your Skills
+</span>
+
+</div>
 
 </div>
 
@@ -1102,13 +1181,14 @@ button:hover{
     class="cv-section"
     id="languagesSection">
 
-    <h3>
-        Languages
-    </h3>
+<h3>
+    Languages
+</h3>
 
-    <p id="cvLanguages">
-        Your languages will appear here.
-    </p>
+
+<p id="cvLanguages">
+    Your languages will appear here.
+</p>
 
 </div>
 
@@ -1120,136 +1200,221 @@ button:hover{
     class="cv-section"
     id="projectSection">
 
-    <h3>
-        Projects
-    </h3>
+<h3>
+    Projects
+</h3>
 
-    <div class="cv-item">
 
-        <h4 id="cvProjectName">
-            Project Name
-        </h4>
+<div class="cv-item">
 
-        <p id="cvProjectDescription">
-            Your project description will appear here.
-        </p>
+<h4 id="cvProjectName">
+    Project Name
+</h4>
 
-    </div>
 
-</div>
-
+<p id="cvProjectDescription">
+    Your project description will appear here.
+</p>
 
 </div>
 
 </div>
 
 
+</div>
 
-<!-- =========================================
-     JOB SEARCH
-========================================= -->
+</div>
+
+
+
+<!-- =====================================================
+     JORDAN JOBS
+===================================================== -->
 
 <div class="card jobs-area">
 
 <h2>
-    🔎 Find Job Opportunities
+    🇯🇴 Jordan Job Opportunities
 </h2>
 
 
-<p style="color:var(--muted);">
+<p class="jobs-intro">
 
-    Search for jobs based on your target job title.
+    Search for employment opportunities in Jordan using
+    official Jordanian employment platforms and government
+    recruitment systems.
 
 </p>
 
 
-<div class="job">
 
-    <h3>
-        LinkedIn Jobs
-    </h3>
+<!-- SEARCH -->
 
-    <p>
-        Search professional job opportunities on LinkedIn.
-    </p>
+<div class="job-search-box">
 
-    <a
-        id="linkedinJobs"
-        href="https://www.linkedin.com/jobs/"
-        target="_blank">
-
-        Search LinkedIn Jobs →
-
-    </a>
-
-</div>
+<label>
+    Job Search
+</label>
 
 
+<input
+    id="jobSearch"
+    type="text"
+    placeholder="Example: Web Developer"
+    oninput="updateJobLinks()">
 
-<div class="job">
 
-    <h3>
-        Indeed
-    </h3>
+<button
+    class="primary full"
+    style="margin-top:12px;"
+    onclick="searchJordanJobs()">
 
-    <p>
-        Search for jobs and career opportunities on Indeed.
-    </p>
+    🔎 Search Jordan Jobs
 
-    <a
-        id="indeedJobs"
-        href="https://www.indeed.com/"
-        target="_blank">
-
-        Search Indeed →
-
-    </a>
+</button>
 
 </div>
 
 
+
+<!-- SAJJIL -->
 
 <div class="job">
 
-    <h3>
-        Bayt
-    </h3>
+<span class="official">
+    OFFICIAL JORDANIAN PLATFORM
+</span>
 
-    <p>
-        Search for jobs across the Middle East.
-    </p>
 
-    <a
-        id="baytJobs"
-        href="https://www.bayt.com/"
-        target="_blank">
+<h3>
+    🇯🇴 Sajjil - National Employment Platform
+</h3>
 
-        Search Bayt →
 
-    </a>
+<p>
+
+    The official national employment platform of Jordan's
+    Ministry of Labour. You can search for jobs and training
+    opportunities and apply for suitable opportunities.
+
+</p>
+
+
+<a
+    id="sajjilLink"
+    href="https://sajjil.gov.jo/candidates"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Search Sajjil Opportunities →
+
+</a>
 
 </div>
 
 
+
+<!-- PUBLIC SECTOR -->
 
 <div class="job">
 
-    <h3>
-        Google Jobs
-    </h3>
+<span class="official">
+    OFFICIAL GOVERNMENT PLATFORM
+</span>
 
-    <p>
-        Search Google for current job opportunities.
-    </p>
 
-    <a
-        id="googleJobs"
-        href="https://www.google.com/search?q=jobs"
-        target="_blank">
+<h3>
+    🏛 Public Sector Recruitment
+</h3>
 
-        Search Google Jobs →
 
-    </a>
+<p>
+
+    Official recruitment system for vacancies in Jordan's
+    public sector.
+
+</p>
+
+
+<a
+    href="https://applyjobs.spac.gov.jo/"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    View Public Sector Jobs →
+
+</a>
+
+</div>
+
+
+
+<!-- GOVERNMENT ANNOUNCEMENTS -->
+
+<div class="job">
+
+<span class="official">
+    OFFICIAL GOVERNMENT PLATFORM
+</span>
+
+
+<h3>
+    🏛 Jordan Government Job Announcements
+</h3>
+
+
+<p>
+
+    Official unified government announcements platform
+    containing current job vacancy announcements.
+
+</p>
+
+
+<a
+    href="https://www.advs.gov.jo/Announcement/Home/Jobs"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    View Government Job Announcements →
+
+</a>
+
+</div>
+
+
+
+<!-- MINISTRY OF LABOUR -->
+
+<div class="job">
+
+<span class="official">
+    OFFICIAL GOVERNMENT WEBSITE
+</span>
+
+
+<h3>
+    🏢 Jordan Ministry of Labour
+</h3>
+
+
+<p>
+
+    Official website of the Jordanian Ministry of Labour,
+    including employment services and the national
+    employment platform.
+
+</p>
+
+
+<a
+    href="https://www.mol.gov.jo/"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Visit Ministry of Labour →
+
+</a>
 
 </div>
 
@@ -1262,9 +1427,9 @@ button:hover{
 </div>
 
 
-<!-- =========================================
-     DEVELOPER FOOTER
-========================================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="developer-footer">
 
@@ -1279,18 +1444,20 @@ button:hover{
 
 <script>
 
-/* =========================================
-   GET ELEMENT
-========================================= */
+/* =====================================================
+   HELPER
+===================================================== */
 
 function get(id){
+
     return document.getElementById(id);
+
 }
 
 
-/* =========================================
+/* =====================================================
    UPDATE CV
-========================================= */
+===================================================== */
 
 function updateCV(){
 
@@ -1352,58 +1519,93 @@ function updateCV(){
         get("projectDescription").value.trim();
 
 
-    /* =====================================
-       PERSONAL INFORMATION
-    ===================================== */
+    /* =========================================
+       NAME
+    ========================================= */
 
     get("cvName").textContent =
         name || "Your Name";
+
+
+    /* =========================================
+       TITLE
+    ========================================= */
 
     get("cvTitle").textContent =
         title || "Your Target Job Title";
 
 
-    /* =====================================
+    /* =========================================
        CONTACT
-    ===================================== */
+    ========================================= */
 
     let contact = [];
 
+
     if(email){
-        contact.push(email);
+
+        contact.push(
+            escapeHTML(email)
+        );
+
     }
+
 
     if(phone){
-        contact.push(phone);
+
+        contact.push(
+            escapeHTML(phone)
+        );
+
     }
 
+
     if(location){
-        contact.push(location);
+
+        contact.push(
+            escapeHTML(location)
+        );
+
     }
+
 
     let links = [];
 
+
     if(linkedin){
+
         links.push(
-            `<a href="${linkedin}"
-                target="_blank">
+            `<a href="${safeURL(linkedin)}"
+                target="_blank"
+                rel="noopener noreferrer">
                 LinkedIn
              </a>`
         );
+
     }
 
+
     if(github){
+
         links.push(
-            `<a href="${github}"
-                target="_blank">
+            `<a href="${safeURL(github)}"
+                target="_blank"
+                rel="noopener noreferrer">
                 GitHub
              </a>`
         );
+
     }
 
+
     if(links.length){
-        contact.push(links.join(" • "));
+
+        contact.push(
+            links.join(" • ")
+        );
+
     }
+
 
     get("cvContact").innerHTML =
         contact.length
@@ -1411,9 +1613,9 @@ function updateCV(){
         : "Email • Phone • Location";
 
 
-    /* =====================================
+    /* =========================================
        SUMMARY
-    ===================================== */
+    ========================================= */
 
     if(summary){
 
@@ -1431,11 +1633,16 @@ function updateCV(){
     }
 
 
-    /* =====================================
+    /* =========================================
        EXPERIENCE
-    ===================================== */
+    ========================================= */
 
-    if(jobTitle || company || workDate || experience){
+    if(
+        jobTitle ||
+        company ||
+        workDate ||
+        experience
+    ){
 
         get("experienceSection").style.display =
             "block";
@@ -1460,17 +1667,22 @@ function updateCV(){
     }
 
 
-    /* =====================================
+    /* =========================================
        EDUCATION
-    ===================================== */
+    ========================================= */
 
-    if(degree || university || educationDate){
+    if(
+        degree ||
+        university ||
+        educationDate
+    ){
 
         get("educationSection").style.display =
             "block";
 
         get("cvDegree").textContent =
-            degree || "Degree / Qualification";
+            degree ||
+            "Degree / Qualification";
 
         get("cvUniversity").textContent =
             university || "";
@@ -1486,26 +1698,34 @@ function updateCV(){
     }
 
 
-    /* =====================================
+    /* =========================================
        SKILLS
-    ===================================== */
+    ========================================= */
 
     if(skills){
 
         get("skillsSection").style.display =
             "block";
 
+
         const skillList =
             skills
             .split(",")
-            .map(skill => skill.trim())
-            .filter(skill => skill);
+            .map(
+                skill =>
+                    skill.trim()
+            )
+            .filter(
+                skill =>
+                    skill
+            );
 
 
         get("cvSkills").innerHTML =
             skillList
-            .map(skill =>
-                `<span>${escapeHTML(skill)}</span>`
+            .map(
+                skill =>
+                    `<span>${escapeHTML(skill)}</span>`
             )
             .join("");
 
@@ -1517,9 +1737,9 @@ function updateCV(){
     }
 
 
-    /* =====================================
+    /* =========================================
        LANGUAGES
-    ===================================== */
+    ========================================= */
 
     if(languages){
 
@@ -1537,20 +1757,25 @@ function updateCV(){
     }
 
 
-    /* =====================================
+    /* =========================================
        PROJECT
-    ===================================== */
+    ========================================= */
 
-    if(projectName || projectDescription){
+    if(
+        projectName ||
+        projectDescription
+    ){
 
         get("projectSection").style.display =
             "block";
 
         get("cvProjectName").textContent =
-            projectName || "Project";
+            projectName ||
+            "Project";
 
         get("cvProjectDescription").textContent =
-            projectDescription || "";
+            projectDescription ||
+            "";
 
     }else{
 
@@ -1560,64 +1785,212 @@ function updateCV(){
     }
 
 
-    /* =====================================
-       JOB SEARCH LINKS
-    ===================================== */
+    /* =========================================
+       JOB SEARCH
+    ========================================= */
 
-    const searchTerm =
-        encodeURIComponent(
-            title || "jobs"
-        );
+    get("jobSearch").value =
+        title;
 
 
-    get("linkedinJobs").href =
-        `https://www.linkedin.com/jobs/search/?keywords=${searchTerm}`;
-
-
-    get("indeedJobs").href =
-        `https://www.indeed.com/jobs?q=${searchTerm}`;
-
-
-    get("baytJobs").href =
-        `https://www.bayt.com/en/international/jobs/?q=${searchTerm}`;
-
-
-    get("googleJobs").href =
-        `https://www.google.com/search?q=${searchTerm}+jobs`;
-
-
-    /* =====================================
-       SAVE DATA
-    ===================================== */
+    updateJobLinks();
 
     saveData();
 
 }
 
 
-/* =========================================
+/* =====================================================
+   UPDATE JOB LINKS
+===================================================== */
+
+function updateJobLinks(){
+
+    const title =
+        get("title").value.trim();
+
+
+    const manualSearch =
+        get("jobSearch").value.trim();
+
+
+    const searchTerm =
+        manualSearch ||
+        title ||
+        "jobs";
+
+
+    const encoded =
+        encodeURIComponent(
+            searchTerm
+        );
+
+
+    /*
+       Sajjil has an official candidates page
+       where users can search opportunities.
+       The job title is also copied into the
+       search box for convenience.
+    */
+
+    get("sajjilLink").href =
+        "https://sajjil.gov.jo/candidates";
+
+}
+
+
+/* =====================================================
+   SEARCH JORDAN JOBS
+===================================================== */
+
+function searchJordanJobs(){
+
+    const search =
+        get("jobSearch").value.trim()
+        ||
+        get("title").value.trim();
+
+
+    if(!search){
+
+        alert(
+            "Please enter a job title first."
+        );
+
+        get("jobSearch").focus();
+
+        return;
+
+    }
+
+
+    const encoded =
+        encodeURIComponent(
+            search
+        );
+
+
+    /*
+       Open the official Jordanian
+       recruitment platforms in new tabs.
+    */
+
+
+    window.open(
+        "https://sajjil.gov.jo/candidates",
+        "_blank"
+    );
+
+
+    window.open(
+        "https://applyjobs.spac.gov.jo/",
+        "_blank"
+    );
+
+
+    window.open(
+        "https://www.advs.gov.jo/Announcement/Home/Jobs",
+        "_blank"
+    );
+
+
+    /*
+       Also open a Google search limited
+       to official Jordanian government
+       domains for the entered job title.
+    */
+
+    window.open(
+        "https://www.google.com/search?q=" +
+        encoded +
+        "+site%3Agov.jo+jobs",
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   SAFE URL
+===================================================== */
+
+function safeURL(url){
+
+    try{
+
+        const parsed =
+            new URL(url);
+
+        if(
+            parsed.protocol === "http:" ||
+            parsed.protocol === "https:"
+        ){
+
+            return escapeAttribute(
+                parsed.href
+            );
+
+        }
+
+    }catch(error){
+
+        return "#";
+
+    }
+
+    return "#";
+
+}
+
+
+/* =====================================================
    ESCAPE HTML
-========================================= */
+===================================================== */
 
 function escapeHTML(text){
 
-    return text
+    return String(text)
+
         .replace(/&/g,"&amp;")
+
         .replace(/</g,"&lt;")
+
         .replace(/>/g,"&gt;")
+
         .replace(/"/g,"&quot;")
+
         .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================
-   SAVE FORM DATA
-========================================= */
+/* =====================================================
+   ESCAPE ATTRIBUTE
+===================================================== */
+
+function escapeAttribute(text){
+
+    return String(text)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;");
+
+}
+
+
+/* =====================================================
+   SAVE DATA
+===================================================== */
 
 function saveData(){
 
     const fields = [
+
         "name",
         "title",
         "email",
@@ -1637,10 +2010,12 @@ function saveData(){
         "languages",
         "projectName",
         "projectDescription"
+
     ];
 
 
     const data = {};
+
 
     fields.forEach(id => {
 
@@ -1658,9 +2033,9 @@ function saveData(){
 }
 
 
-/* =========================================
-   LOAD FORM DATA
-========================================= */
+/* =====================================================
+   LOAD DATA
+===================================================== */
 
 function loadData(){
 
@@ -1671,7 +2046,9 @@ function loadData(){
 
 
     if(!saved){
+
         return;
+
     }
 
 
@@ -1684,8 +2061,10 @@ function loadData(){
         Object.keys(data).forEach(id => {
 
             if(get(id)){
+
                 get(id).value =
                     data[id];
+
             }
 
         });
@@ -1701,9 +2080,9 @@ function loadData(){
 }
 
 
-/* =========================================
+/* =====================================================
    CLEAR FORM
-========================================= */
+===================================================== */
 
 function clearForm(){
 
@@ -1714,11 +2093,14 @@ function clearForm(){
 
 
     if(!confirmed){
+
         return;
+
     }
 
 
     const fields = [
+
         "name",
         "title",
         "email",
@@ -1738,6 +2120,7 @@ function clearForm(){
         "languages",
         "projectName",
         "projectDescription"
+
     ];
 
 
@@ -1758,17 +2141,21 @@ function clearForm(){
 }
 
 
-/* =========================================
+/* =====================================================
    DARK MODE
-========================================= */
+===================================================== */
 
 function toggleTheme(){
 
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle(
+        "dark"
+    );
 
 
     const dark =
-        document.body.classList.contains("dark");
+        document.body.classList.contains(
+            "dark"
+        );
 
 
     localStorage.setItem(
@@ -1785,9 +2172,9 @@ function toggleTheme(){
 }
 
 
-/* =========================================
+/* =====================================================
    LOAD THEME
-========================================= */
+===================================================== */
 
 function loadTheme(){
 
@@ -1799,7 +2186,10 @@ function loadTheme(){
 
     if(dark === "true"){
 
-        document.body.classList.add("dark");
+        document.body.classList.add(
+            "dark"
+        );
+
 
         get("themeButton").textContent =
             "☀️ Light Mode";
@@ -1809,16 +2199,15 @@ function loadTheme(){
 }
 
 
-/* =========================================
+/* =====================================================
    INITIALIZE
-========================================= */
+===================================================== */
 
 loadData();
 
 loadTheme();
 
 updateCV();
-
 
 </script>
 
