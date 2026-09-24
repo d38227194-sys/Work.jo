@@ -1,690 +1,1791 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CV Builder - منشئ السيرة الذاتية</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>CV Builder | منشئ السيرة الذاتية</title>
 
 <style>
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --bg:#f4f4f4;
+    --card:#ffffff;
+    --input:#ffffff;
+
+    --text:#111111;
+    --muted:#666666;
+
+    --border:#d5d5d5;
+
+    --black:#000000;
+    --white:#ffffff;
+
+    --soft:#f0f0f0;
+}
+
+
+/* DARK MODE */
+
+body.dark{
+
+    --bg:#0d0d0d;
+    --card:#181818;
+    --input:#222222;
+
+    --text:#ffffff;
+    --muted:#bdbdbd;
+
+    --border:#3a3a3a;
+
+    --black:#ffffff;
+    --white:#000000;
+
+    --soft:#252525;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
 *{
     box-sizing:border-box;
-    font-family:Arial,Tahoma,sans-serif;
+    font-family:
+        Arial,
+        Tahoma,
+        sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
+
     margin:0;
-    background:#eef2f7;
-    color:#172033;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    transition:
+        background .25s,
+        color .25s;
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:linear-gradient(135deg,#2563eb,#4f46e5);
-    color:white;
+
+    background:#000;
+
+    color:#fff;
+
     padding:35px 20px;
+
     text-align:center;
+
+    position:relative;
 }
 
 header h1{
+
     margin:0 0 10px;
-    font-size:32px;
+
+    font-size:34px;
+
+    letter-spacing:.5px;
 }
 
+header p{
+
+    margin:0;
+
+    color:#ddd;
+
+    font-size:15px;
+}
+
+
+/* THEME BUTTON */
+
+.theme-btn{
+
+    position:absolute;
+
+    left:20px;
+    top:20px;
+
+    background:#fff;
+
+    color:#000;
+
+    border:1px solid #fff;
+
+    border-radius:10px;
+
+    padding:10px 15px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.theme-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
-    max-width:1200px;
+
+    max-width:1250px;
+
     margin:30px auto;
+
     padding:0 15px;
 }
 
+
+/* =========================
+   MAIN GRID
+========================= */
+
 .grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        minmax(300px, 1fr)
+        minmax(300px, 1fr);
+
     gap:25px;
+
+    align-items:start;
 }
+
+
+/* =========================
+   CARDS
+========================= */
 
 .card{
-    background:white;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
     padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    margin-bottom:25px;
+
+    margin-bottom:20px;
+
+    transition:.25s;
 }
 
-h2{
+.card h2{
+
     margin-top:0;
-    color:#2563eb;
+
+    margin-bottom:20px;
+
+    font-size:21px;
 }
+
+
+/* =========================
+   FORM
+========================= */
 
 label{
+
     display:block;
-    margin-top:14px;
-    margin-bottom:6px;
+
+    margin-top:15px;
+
+    margin-bottom:7px;
+
     font-weight:bold;
+
+    font-size:14px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
+
     width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:10px;
+
+    padding:12px 13px;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    background:var(--input);
+
+    color:var(--text);
+
     font-size:15px;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--text);
+
 }
 
 textarea{
+
     min-height:100px;
+
     resize:vertical;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 button{
-    border:0;
+
+    border:none;
+
     padding:13px 18px;
-    border-radius:10px;
+
+    border-radius:9px;
+
     cursor:pointer;
-    font-weight:bold;
+
     font-size:15px;
-    margin-top:15px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
 }
 
 .primary{
-    background:#2563eb;
-    color:white;
+
+    background:var(--black);
+
+    color:var(--white);
 }
 
 .secondary{
-    background:#e5e7eb;
-    color:#111827;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
 }
 
 .full{
+
     width:100%;
+
+    margin-bottom:12px;
 }
+
+
+/* =========================
+   CV
+========================= */
 
 .cv{
-    background:white;
+
+    background:#fff;
+
+    color:#111;
+
     min-height:900px;
-    padding:40px;
-    border-radius:15px;
+
+    padding:45px;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.08);
 }
 
+
+/* CV HEADER */
+
 .cv-header{
-    border-bottom:3px solid #2563eb;
+
+    border-bottom:3px solid #111;
+
     padding-bottom:20px;
+
     margin-bottom:25px;
 }
 
 .cv-header h1{
-    font-size:35px;
-    margin:0;
+
+    margin:0 0 7px;
+
+    font-size:36px;
+
+    color:#111;
 }
 
-.cv-header p{
-    color:#555;
+.cv-header .cv-title{
+
+    font-size:19px;
+
+    color:#444;
+
+    margin-bottom:12px;
 }
+
+.cv-contact{
+
+    font-size:13px;
+
+    color:#555;
+
+    line-height:1.8;
+}
+
+
+/* CV SECTIONS */
 
 .cv-section{
-    margin-bottom:25px;
+
+    margin-bottom:28px;
 }
 
 .cv-section h3{
-    color:#2563eb;
-    border-bottom:1px solid #ddd;
+
+    font-size:18px;
+
+    color:#111;
+
+    border-bottom:1px solid #ccc;
+
     padding-bottom:8px;
+
+    margin-bottom:13px;
 }
 
-.job{
-    background:#f8fafc;
-    padding:18px;
-    margin-top:12px;
-    border-radius:12px;
-    border-right:4px solid #2563eb;
+.cv-section p{
+
+    line-height:1.7;
+
+    margin:5px 0;
 }
 
-.job a{
-    color:#2563eb;
-    text-decoration:none;
+
+/* CV JOB */
+
+.cv-item{
+
+    margin-bottom:17px;
+}
+
+.cv-item h4{
+
+    margin:0 0 5px;
+
+    font-size:16px;
+}
+
+.cv-item .company{
+
     font-weight:bold;
+
+    color:#333;
+}
+
+.cv-item .date{
+
+    font-size:13px;
+
+    color:#666;
+
+    margin:3px 0 8px;
+}
+
+
+/* SKILLS */
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
 }
 
 .skills span{
-    display:inline-block;
-    background:#dbeafe;
-    color:#1d4ed8;
-    padding:7px 10px;
+
+    background:#111;
+
+    color:#fff;
+
+    padding:7px 11px;
+
     border-radius:20px;
-    margin:4px;
+
+    font-size:13px;
 }
 
-.hidden{
-    display:none;
+
+/* CV LINKS */
+
+.cv a{
+
+    color:#111;
+
+    text-decoration:underline;
+
 }
 
-@media(max-width:800px){
+
+/* =========================
+   JOBS
+========================= */
+
+.jobs-area{
+
+    margin-top:20px;
+}
+
+.job{
+
+    background:var(--soft);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-right:4px solid var(--text);
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:12px;
+}
+
+.job h3{
+
+    margin-top:0;
+
+    margin-bottom:7px;
+}
+
+.job p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+.job a{
+
+    color:var(--text);
+
+    font-weight:bold;
+
+    text-decoration:underline;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty{
+
+    color:var(--muted);
+
+    text-align:center;
+
+    padding:15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
     .grid{
+
         grid-template-columns:1fr;
+
     }
 
     .cv{
+
         padding:25px;
+
     }
+
+    .cv-header h1{
+
+        font-size:30px;
+
+    }
+
 }
 
+
+/* SMALL MOBILE */
+
+@media(max-width:500px){
+
+    header{
+
+        padding:25px 15px 30px;
+
+    }
+
+    header h1{
+
+        font-size:27px;
+
+        margin-top:35px;
+
+    }
+
+    .theme-btn{
+
+        position:static;
+
+        margin-bottom:15px;
+
+    }
+
+    .container{
+
+        padding:0 10px;
+
+        margin-top:15px;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .cv{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
 @media print{
+
     body{
-        background:white;
+
+        background:white !important;
+
     }
 
     header,
     .form-area,
     .jobs-area,
-    button{
-        display:none!important;
+    .print-button{
+
+        display:none !important;
+
     }
 
     .container{
+
         margin:0;
+
+        padding:0;
+
         max-width:none;
+
+    }
+
+    .grid{
+
+        display:block;
+
     }
 
     .cv{
+
         box-shadow:none;
+
+        border:none;
+
         border-radius:0;
+
+        padding:35px;
+
+        min-height:auto;
+
     }
+
+    .cv-header{
+
+        border-bottom:3px solid #111;
+
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <h1>🚀 CV Builder</h1>
-    <p>أنشئ سيرتك الذاتية الاحترافية وابحث عن وظائف مناسبة لك</p>
+
+    <button
+        class="theme-btn"
+        id="themeButton"
+        onclick="toggleTheme()">
+
+        🌙 الوضع الداكن
+
+    </button>
+
+
+    <h1>
+        CV Builder
+    </h1>
+
+    <p>
+        أنشئ سيرتك الذاتية الاحترافية وابحث عن وظائف مناسبة
+    </p>
+
 </header>
+
+
 
 <div class="container">
 
+
 <div class="grid">
 
-<!-- FORM -->
+
+<!-- =====================================================
+     LEFT SIDE - FORM
+===================================================== -->
+
 <div class="form-area">
+
+
+<!-- PERSONAL INFORMATION -->
 
 <div class="card">
 
 <h2>👤 المعلومات الشخصية</h2>
 
-<label>الاسم الكامل</label>
-<input id="name" placeholder="مثال: أحمد محمد">
 
-<label>المسمى الوظيفي المستهدف</label>
-<input id="title" placeholder="مثال: Web Developer">
+<label>
+الاسم الكامل
+</label>
 
-<label>البريد الإلكتروني</label>
-<input id="email" type="email" placeholder="example@email.com">
+<input
+    id="name"
+    type="text"
+    placeholder="مثال: أحمد محمد">
 
-<label>رقم الهاتف</label>
-<input id="phone" placeholder="+962...">
 
-<label>المدينة والدولة</label>
-<input id="location" placeholder="عمّان، الأردن">
+<label>
+المسمى الوظيفي المستهدف
+</label>
 
-<label>رابط LinkedIn</label>
-<input id="linkedin" placeholder="https://linkedin.com/in/...">
+<input
+    id="title"
+    type="text"
+    placeholder="مثال: Web Developer">
 
-<label>رابط GitHub</label>
-<input id="github" placeholder="https://github.com/...">
+
+<label>
+البريد الإلكتروني
+</label>
+
+<input
+    id="email"
+    type="email"
+    placeholder="example@email.com">
+
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+    id="phone"
+    type="text"
+    placeholder="+962 7X XXX XXXX">
+
+
+<label>
+المدينة والدولة
+</label>
+
+<input
+    id="location"
+    type="text"
+    placeholder="عمّان، الأردن">
+
+
+<label>
+رابط LinkedIn
+</label>
+
+<input
+    id="linkedin"
+    type="url"
+    placeholder="https://linkedin.com/in/...">
+
+
+<label>
+رابط GitHub
+</label>
+
+<input
+    id="github"
+    type="url"
+    placeholder="https://github.com/...">
 
 </div>
 
+
+
+<!-- SUMMARY -->
 
 <div class="card">
 
-<h2>🎯 نبذة عنك</h2>
+<h2>🎯 النبذة الشخصية</h2>
 
-<textarea id="summary"
-placeholder="اكتب نبذة مختصرة عن نفسك، خبرتك، أهدافك ومجالك..."></textarea>
+<textarea
+    id="summary"
+    placeholder="اكتب نبذة مختصرة عن خبرتك ومهاراتك وأهدافك المهنية..."></textarea>
 
 </div>
 
+
+
+<!-- EXPERIENCE -->
 
 <div class="card">
 
 <h2>💼 الخبرة العملية</h2>
 
-<label>اسم الشركة</label>
-<input id="company" placeholder="اسم الشركة">
 
-<label>المسمى الوظيفي</label>
-<input id="jobTitle" placeholder="المسمى الوظيفي">
+<label>
+اسم الشركة
+</label>
 
-<label>مدة العمل</label>
-<input id="jobDuration" placeholder="2024 - 2026">
+<input
+    id="company"
+    type="text"
+    placeholder="اسم الشركة">
 
-<label>وصف الخبرة</label>
-<textarea id="jobDescription"
-placeholder="اكتب أهم المهام والإنجازات..."></textarea>
+
+<label>
+المسمى الوظيفي
+</label>
+
+<input
+    id="jobTitle"
+    type="text"
+    placeholder="المسمى الوظيفي">
+
+
+<label>
+مدة العمل
+</label>
+
+<input
+    id="jobDuration"
+    type="text"
+    placeholder="2024 - 2026">
+
+
+<label>
+وصف الخبرة والإنجازات
+</label>
+
+<textarea
+    id="jobDescription"
+    placeholder="اكتب أهم المهام والإنجازات التي حققتها..."></textarea>
 
 </div>
 
+
+
+<!-- EDUCATION -->
 
 <div class="card">
 
 <h2>🎓 التعليم</h2>
 
-<label>المؤسسة التعليمية</label>
-<input id="education" placeholder="اسم الجامعة / المدرسة">
 
-<label>التخصص</label>
-<input id="major" placeholder="علوم الحاسوب">
+<label>
+المؤسسة التعليمية
+</label>
 
-<label>الفترة</label>
-<input id="educationDate" placeholder="2023 - 2027">
+<input
+    id="education"
+    type="text"
+    placeholder="اسم الجامعة أو المدرسة">
+
+
+<label>
+التخصص
+</label>
+
+<input
+    id="major"
+    type="text"
+    placeholder="علوم الحاسوب">
+
+
+<label>
+الفترة
+</label>
+
+<input
+    id="educationDate"
+    type="text"
+    placeholder="2023 - 2027">
 
 </div>
 
+
+
+<!-- SKILLS -->
 
 <div class="card">
 
 <h2>🛠️ المهارات</h2>
 
-<label>المهارات</label>
+<label>
+المهارات
+</label>
 
-<input id="skills"
-placeholder="HTML, CSS, JavaScript, Python, Git">
+<input
+    id="skills"
+    type="text"
+    placeholder="HTML, CSS, JavaScript, Python, Git">
+
+<small style="color:var(--muted);">
+افصل بين المهارات باستخدام فاصلة ,
+</small>
 
 </div>
 
+
+
+<!-- LANGUAGES -->
 
 <div class="card">
 
 <h2>🌍 اللغات</h2>
 
-<label>اللغات</label>
+<label>
+اللغات
+</label>
 
-<input id="languages"
-placeholder="العربية - ممتاز، الإنجليزية - جيد جداً">
+<input
+    id="languages"
+    type="text"
+    placeholder="العربية - ممتاز، الإنجليزية - جيد جداً">
 
 </div>
 
+
+
+<!-- PROJECTS -->
 
 <div class="card">
 
 <h2>💻 المشاريع</h2>
 
-<label>اسم المشروع</label>
-<input id="projectName" placeholder="اسم المشروع">
 
-<label>وصف المشروع</label>
-<textarea id="projectDescription"
-placeholder="اشرح المشروع والتقنيات المستخدمة"></textarea>
+<label>
+اسم المشروع
+</label>
 
-<label>رابط المشروع</label>
-<input id="projectLink" placeholder="https://github.com/...">
+<input
+    id="projectName"
+    type="text"
+    placeholder="اسم المشروع">
+
+
+<label>
+وصف المشروع
+</label>
+
+<textarea
+    id="projectDescription"
+    placeholder="اشرح المشروع والتقنيات المستخدمة..."></textarea>
+
+
+<label>
+رابط المشروع
+</label>
+
+<input
+    id="projectLink"
+    type="url"
+    placeholder="https://github.com/...">
 
 </div>
 
 
-<button class="primary full" onclick="generateCV()">
-✨ إنشاء CV
+
+<!-- BUTTONS -->
+
+<button
+    class="primary full"
+    onclick="generateCV()">
+
+    ✨ إنشاء السيرة الذاتية
+
 </button>
 
-<button class="secondary full" onclick="findJobs()">
-🔎 البحث عن وظائف مناسبة
+
+<button
+    class="secondary full"
+    onclick="findJobs()">
+
+    🔎 البحث عن وظائف مناسبة
+
 </button>
+
 
 </div>
+
+
+
+<!-- =====================================================
+     RIGHT SIDE
+===================================================== -->
+
+<div>
 
 
 <!-- CV -->
-<div>
 
-<div class="cv" id="cv">
+<div
+    class="cv"
+    id="cv">
+
+
+<!-- CV HEADER -->
 
 <div class="cv-header">
 
-<h1 id="cvName">اسمك هنا</h1>
+<h1 id="cvName">
+اسمك هنا
+</h1>
 
-<p id="cvTitle">المسمى الوظيفي</p>
+<div
+    class="cv-title"
+    id="cvTitle">
 
-<p>
-<span id="cvEmail">البريد الإلكتروني</span>
- |
-<span id="cvPhone">رقم الهاتف</span>
- |
-<span id="cvLocation">الموقع</span>
-</p>
+المسمى الوظيفي
+
+</div>
+
+<div
+    class="cv-contact">
+
+<span id="cvEmail">
+البريد الإلكتروني
+</span>
+
+&nbsp; | &nbsp;
+
+<span id="cvPhone">
+رقم الهاتف
+</span>
+
+&nbsp; | &nbsp;
+
+<span id="cvLocation">
+الموقع
+</span>
+
+</div>
 
 </div>
 
 
+
+<!-- SUMMARY -->
+
 <div class="cv-section">
 
-<h3>نبذة شخصية</h3>
+<h3>
+نبذة شخصية
+</h3>
 
 <p id="cvSummary">
+
 اكتب نبذة عن نفسك من النموذج.
+
 </p>
 
 </div>
 
 
+
+<!-- EXPERIENCE -->
+
 <div class="cv-section">
 
-<h3>الخبرة العملية</h3>
+<h3>
+الخبرة العملية
+</h3>
 
 <div id="cvExperience">
+
+<div class="empty">
 لا توجد خبرة مضافة.
 </div>
 
 </div>
 
+</div>
+
+
+
+<!-- EDUCATION -->
 
 <div class="cv-section">
 
-<h3>التعليم</h3>
+<h3>
+التعليم
+</h3>
 
 <div id="cvEducation">
+
+<div class="empty">
 لا توجد معلومات تعليمية.
 </div>
 
 </div>
 
+</div>
+
+
+
+<!-- SKILLS -->
 
 <div class="cv-section">
 
-<h3>المهارات</h3>
+<h3>
+المهارات
+</h3>
 
-<div class="skills" id="cvSkills">
+<div
+    class="skills"
+    id="cvSkills">
+
+<div class="empty">
+لا توجد مهارات.
 </div>
 
 </div>
 
+</div>
+
+
+
+<!-- LANGUAGES -->
 
 <div class="cv-section">
 
-<h3>اللغات</h3>
+<h3>
+اللغات
+</h3>
 
 <p id="cvLanguages">
+
+لا توجد لغات مضافة.
+
 </p>
 
 </div>
 
 
+
+<!-- PROJECTS -->
+
 <div class="cv-section">
 
-<h3>المشاريع</h3>
+<h3>
+المشاريع
+</h3>
 
 <div id="cvProjects">
+
+<div class="empty">
+لا توجد مشاريع مضافة.
 </div>
 
 </div>
 
+</div>
+
+
+
+<!-- LINKS -->
 
 <div class="cv-section">
 
-<h3>الروابط</h3>
+<h3>
+الروابط
+</h3>
 
-<p id="cvLinks"></p>
+<p id="cvLinks">
+
+لا توجد روابط.
+
+</p>
 
 </div>
 
+
 </div>
 
 
-<div class="card jobs-area">
 
-<h2>💼 وظائف مقترحة</h2>
+<!-- JOBS -->
+
+<div
+    class="card jobs-area">
+
+<h2>
+💼 وظائف مقترحة
+</h2>
 
 <div id="jobs">
 
-<p>
-أدخل معلوماتك واضغط "البحث عن وظائف مناسبة".
-</p>
+<div class="empty">
+
+أدخل معلوماتك ثم اضغط
+<br>
+
+<strong>
+"البحث عن وظائف مناسبة"
+</strong>
 
 </div>
 
 </div>
 
-<button class="primary full" onclick="window.print()">
-🖨️ تحميل / طباعة CV كـ PDF
+</div>
+
+
+
+<!-- PRINT -->
+
+<button
+    class="primary full print-button"
+    onclick="window.print()">
+
+    🖨️ حفظ CV كـ PDF
+
 </button>
 
+
 </div>
 
 </div>
+
 </div>
+
 
 
 <script>
 
+
+/* =====================================================
+   HELPER
+===================================================== */
+
 function value(id){
-    return document.getElementById(id).value.trim();
+
+    return document
+        .getElementById(id)
+        .value
+        .trim();
+
 }
 
+
+/* =====================================================
+   ESCAPE HTML
+   حماية النصوص التي يدخلها المستخدم
+===================================================== */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   GENERATE CV
+===================================================== */
 
 function generateCV(){
 
-    document.getElementById("cvName").textContent =
-        value("name") || "اسمك هنا";
 
-    document.getElementById("cvTitle").textContent =
-        value("title") || "المسمى الوظيفي";
+    /* PERSONAL */
 
-    document.getElementById("cvEmail").textContent =
-        value("email") || "البريد الإلكتروني";
-
-    document.getElementById("cvPhone").textContent =
-        value("phone") || "رقم الهاتف";
-
-    document.getElementById("cvLocation").textContent =
-        value("location") || "الموقع";
-
-    document.getElementById("cvSummary").textContent =
-        value("summary") || "اكتب نبذة عن نفسك من النموذج.";
+    document.getElementById("cvName")
+        .textContent =
+        value("name") ||
+        "اسمك هنا";
 
 
-    // EXPERIENCE
+    document.getElementById("cvTitle")
+        .textContent =
+        value("title") ||
+        "المسمى الوظيفي";
 
-    const company = value("company");
-    const jobTitle = value("jobTitle");
-    const duration = value("jobDuration");
-    const description = value("jobDescription");
 
-    if(company || jobTitle || description){
+    document.getElementById("cvEmail")
+        .textContent =
+        value("email") ||
+        "البريد الإلكتروني";
 
-        document.getElementById("cvExperience").innerHTML = `
-            <div class="job">
-                <h4>${jobTitle || ""}</h4>
-                <strong>${company || ""}</strong>
-                <p>${duration || ""}</p>
-                <p>${description || ""}</p>
+
+    document.getElementById("cvPhone")
+        .textContent =
+        value("phone") ||
+        "رقم الهاتف";
+
+
+    document.getElementById("cvLocation")
+        .textContent =
+        value("location") ||
+        "الموقع";
+
+
+    document.getElementById("cvSummary")
+        .textContent =
+        value("summary") ||
+        "اكتب نبذة عن نفسك من النموذج.";
+
+
+
+    /* =================================================
+       EXPERIENCE
+    ================================================= */
+
+    const company =
+        value("company");
+
+    const jobTitle =
+        value("jobTitle");
+
+    const jobDuration =
+        value("jobDuration");
+
+    const jobDescription =
+        value("jobDescription");
+
+
+    if(
+        company ||
+        jobTitle ||
+        jobDuration ||
+        jobDescription
+    ){
+
+        document.getElementById(
+            "cvExperience"
+        ).innerHTML = `
+
+            <div class="cv-item">
+
+                <h4>
+                    ${escapeHTML(jobTitle)}
+                </h4>
+
+                <div class="company">
+                    ${escapeHTML(company)}
+                </div>
+
+                <div class="date">
+                    ${escapeHTML(jobDuration)}
+                </div>
+
+                <p>
+                    ${escapeHTML(jobDescription)}
+                </p>
+
             </div>
+
         `;
 
     }else{
 
-        document.getElementById("cvExperience").innerHTML =
-            "لا توجد خبرة مضافة.";
+        document.getElementById(
+            "cvExperience"
+        ).innerHTML = `
+
+            <div class="empty">
+                لا توجد خبرة مضافة.
+            </div>
+
+        `;
 
     }
 
 
-    // EDUCATION
 
-    const education = value("education");
-    const major = value("major");
-    const educationDate = value("educationDate");
+    /* =================================================
+       EDUCATION
+    ================================================= */
 
-    if(education || major){
+    const education =
+        value("education");
 
-        document.getElementById("cvEducation").innerHTML = `
-            <div class="job">
-                <h4>${major || ""}</h4>
-                <strong>${education || ""}</strong>
-                <p>${educationDate || ""}</p>
+    const major =
+        value("major");
+
+    const educationDate =
+        value("educationDate");
+
+
+    if(
+        education ||
+        major ||
+        educationDate
+    ){
+
+        document.getElementById(
+            "cvEducation"
+        ).innerHTML = `
+
+            <div class="cv-item">
+
+                <h4>
+                    ${escapeHTML(major)}
+                </h4>
+
+                <div class="company">
+                    ${escapeHTML(education)}
+                </div>
+
+                <div class="date">
+                    ${escapeHTML(educationDate)}
+                </div>
+
             </div>
+
         `;
 
     }else{
 
-        document.getElementById("cvEducation").innerHTML =
-            "لا توجد معلومات تعليمية.";
+        document.getElementById(
+            "cvEducation"
+        ).innerHTML = `
+
+            <div class="empty">
+                لا توجد معلومات تعليمية.
+            </div>
+
+        `;
 
     }
 
 
-    // SKILLS
 
-    const skills = value("skills")
+    /* =================================================
+       SKILLS
+    ================================================= */
+
+    const skills =
+        value("skills")
         .split(",")
-        .map(x => x.trim())
-        .filter(x => x);
-
-    document.getElementById("cvSkills").innerHTML =
-        skills.map(skill => `<span>${skill}</span>`).join("");
-
-
-    // LANGUAGES
-
-    document.getElementById("cvLanguages").textContent =
-        value("languages");
+        .map(
+            skill => skill.trim()
+        )
+        .filter(
+            skill => skill
+        );
 
 
-    // PROJECT
+    if(skills.length){
 
-    const projectName = value("projectName");
-    const projectDescription = value("projectDescription");
-    const projectLink = value("projectLink");
-
-    if(projectName || projectDescription){
-
-        document.getElementById("cvProjects").innerHTML = `
-            <div class="job">
-                <h4>${projectName}</h4>
-                <p>${projectDescription}</p>
-                ${
-                    projectLink
-                    ? `<a href="${projectLink}" target="_blank">
-                        فتح المشروع
-                       </a>`
-                    : ""
-                }
-            </div>
-        `;
+        document.getElementById(
+            "cvSkills"
+        ).innerHTML = skills
+            .map(
+                skill =>
+                `<span>${escapeHTML(skill)}</span>`
+            )
+            .join("");
 
     }else{
 
-        document.getElementById("cvProjects").innerHTML =
-            "لا توجد مشاريع مضافة.";
+        document.getElementById(
+            "cvSkills"
+        ).innerHTML = `
+
+            <div class="empty">
+                لا توجد مهارات.
+            </div>
+
+        `;
 
     }
 
 
-    // LINKS
+
+    /* =================================================
+       LANGUAGES
+    ================================================= */
+
+    document.getElementById(
+        "cvLanguages"
+    ).textContent =
+        value("languages") ||
+        "لا توجد لغات مضافة.";
+
+
+
+    /* =================================================
+       PROJECT
+    ================================================= */
+
+    const projectName =
+        value("projectName");
+
+    const projectDescription =
+        value("projectDescription");
+
+    const projectLink =
+        value("projectLink");
+
+
+    if(
+        projectName ||
+        projectDescription ||
+        projectLink
+    ){
+
+        let linkHTML = "";
+
+
+        if(projectLink){
+
+            linkHTML = `
+
+                <p>
+
+                    <a
+                        href="${escapeHTML(projectLink)}"
+                        target="_blank"
+                        rel="noopener">
+
+                        فتح المشروع ↗
+
+                    </a>
+
+                </p>
+
+            `;
+
+        }
+
+
+        document.getElementById(
+            "cvProjects"
+        ).innerHTML = `
+
+            <div class="cv-item">
+
+                <h4>
+                    ${escapeHTML(projectName)}
+                </h4>
+
+                <p>
+                    ${escapeHTML(projectDescription)}
+                </p>
+
+                ${linkHTML}
+
+            </div>
+
+        `;
+
+    }else{
+
+        document.getElementById(
+            "cvProjects"
+        ).innerHTML = `
+
+            <div class="empty">
+                لا توجد مشاريع مضافة.
+            </div>
+
+        `;
+
+    }
+
+
+
+    /* =================================================
+       LINKS
+    ================================================= */
+
+    const linkedin =
+        value("linkedin");
+
+    const github =
+        value("github");
+
 
     let links = "";
 
-    if(value("linkedin")){
-        links += `<a href="${value("linkedin")}" target="_blank">
-        LinkedIn
-        </a><br>`;
+
+    if(linkedin){
+
+        links += `
+
+            <a
+                href="${escapeHTML(linkedin)}"
+                target="_blank"
+                rel="noopener">
+
+                LinkedIn ↗
+
+            </a>
+
+            <br>
+
+        `;
+
     }
 
-    if(value("github")){
-        links += `<a href="${value("github")}" target="_blank">
-        GitHub
-        </a>`;
+
+    if(github){
+
+        links += `
+
+            <a
+                href="${escapeHTML(github)}"
+                target="_blank"
+                rel="noopener">
+
+                GitHub ↗
+
+            </a>
+
+        `;
+
     }
 
-    document.getElementById("cvLinks").innerHTML = links;
+
+    document.getElementById(
+        "cvLinks"
+    ).innerHTML =
+        links ||
+        "لا توجد روابط.";
+
 
 }
 
 
+
+/* =====================================================
+   FIND JOBS
+===================================================== */
+
 function findJobs(){
 
-    const title = value("title");
-    const major = value("major");
-    const skills = value("skills");
+
+    const title =
+        value("title");
+
+    const major =
+        value("major");
+
+    const skills =
+        value("skills");
+
+
+    let searchTerm =
+        title ||
+        major ||
+        skills.split(",")[0] ||
+        "Software Developer";
+
 
     const query =
-        encodeURIComponent(
-            title ||
-            major ||
-            skills.split(",")[0] ||
-            "Software Developer"
-        );
+        encodeURIComponent(searchTerm);
 
-    document.getElementById("jobs").innerHTML = `
+
+    document.getElementById(
+        "jobs"
+    ).innerHTML = `
+
+
+        <!-- LINKEDIN -->
 
         <div class="job">
 
-            <h3>LinkedIn Jobs</h3>
+            <h3>
+                LinkedIn Jobs
+            </h3>
 
             <p>
-            وظائف مرتبطة بتخصصك ومهاراتك.
+                البحث عن وظائف مرتبطة بالمسمى الوظيفي الذي أدخلته.
             </p>
 
             <a
-            href="https://www.linkedin.com/jobs/search/?keywords=${query}"
-            target="_blank">
+                href="https://www.linkedin.com/jobs/search/?keywords=${query}"
+                target="_blank"
+                rel="noopener">
 
-            🔗 البحث في LinkedIn
+                🔗 البحث في LinkedIn
 
             </a>
 
         </div>
 
 
+
+        <!-- INDEED -->
+
         <div class="job">
 
-            <h3>Indeed</h3>
+            <h3>
+                Indeed
+            </h3>
 
             <p>
-            البحث عن وظائف حسب المسمى الوظيفي.
+                البحث عن وظائف باستخدام المسمى الوظيفي أو التخصص.
             </p>
 
             <a
-            href="https://www.indeed.com/jobs?q=${query}"
-            target="_blank">
+                href="https://www.indeed.com/jobs?q=${query}"
+                target="_blank"
+                rel="noopener">
 
-            🔗 البحث في Indeed
+                🔗 البحث في Indeed
 
             </a>
 
         </div>
 
 
+
+        <!-- GOOGLE -->
+
         <div class="job">
 
-            <h3>Google Jobs</h3>
+            <h3>
+                Google Jobs
+            </h3>
 
             <p>
-            البحث عن فرص العمل من خلال Google.
+                البحث عن نتائج وظائف من مصادر مختلفة.
             </p>
 
             <a
-            href="https://www.google.com/search?q=${query}+jobs"
-            target="_blank">
+                href="https://www.google.com/search?q=${query}+jobs"
+                target="_blank"
+                rel="noopener">
 
-            🔗 البحث عن وظائف
+                🔗 البحث في Google
 
             </a>
 
         </div>
 
 
+
+        <!-- BAYT -->
+
         <div class="job">
 
-            <h3>Bayt</h3>
+            <h3>
+                Bayt
+
+            </h3>
 
             <p>
-            البحث عن وظائف في المنطقة العربية.
+                منصة وظائف في الشرق الأوسط والمنطقة العربية.
             </p>
 
             <a
-            href="https://www.bayt.com/en/jordan/jobs/"
-            target="_blank">
+                href="https://www.bayt.com/en/jordan/jobs/"
+                target="_blank"
+                rel="noopener">
 
-            🔗 وظائف الأردن
+                🔗 وظائف الأردن
 
             </a>
 
@@ -692,11 +1793,110 @@ function findJobs(){
 
     `;
 
+
+    /* Update CV too */
+
     generateCV();
+
+
+    /* Scroll */
+
+    document
+        .querySelector(".jobs-area")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+function toggleTheme(){
+
+
+    document.body
+        .classList
+        .toggle("dark");
+
+
+    const button =
+        document.getElementById(
+            "themeButton"
+        );
+
+
+    if(
+        document.body
+            .classList
+            .contains("dark")
+    ){
+
+        button.textContent =
+            "☀️ الوضع الفاتح";
+
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+    }else{
+
+        button.textContent =
+            "🌙 الوضع الداكن";
+
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOAD SAVED THEME
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        const theme =
+            localStorage.getItem(
+                "theme"
+            );
+
+
+        if(theme === "dark"){
+
+            document.body
+                .classList
+                .add("dark");
+
+
+            document.getElementById(
+                "themeButton"
+            ).textContent =
+                "☀️ الوضع الفاتح";
+
+        }
+
+    }
+);
+
 </script>
 
+
 </body>
-  </html>
+
+</html>
+
+
