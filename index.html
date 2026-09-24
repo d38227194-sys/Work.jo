@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CV Builder - منشئ السيرة الذاتية</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial,Tahoma,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#eef2f7;
+    color:#172033;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    padding:35px 20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0 0 10px;
+    font-size:32px;
+}
+
+.container{
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+h2{
+    margin-top:0;
+    color:#2563eb;
+}
+
+label{
+    display:block;
+    margin-top:14px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,textarea,select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+button{
+    border:0;
+    padding:13px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:15px;
+    margin-top:15px;
+}
+
+.primary{
+    background:#2563eb;
+    color:white;
+}
+
+.secondary{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+.full{
+    width:100%;
+}
+
+.cv{
+    background:white;
+    min-height:900px;
+    padding:40px;
+    border-radius:15px;
+}
+
+.cv-header{
+    border-bottom:3px solid #2563eb;
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+
+.cv-header h1{
+    font-size:35px;
+    margin:0;
+}
+
+.cv-header p{
+    color:#555;
+}
+
+.cv-section{
+    margin-bottom:25px;
+}
+
+.cv-section h3{
+    color:#2563eb;
+    border-bottom:1px solid #ddd;
+    padding-bottom:8px;
+}
+
+.job{
+    background:#f8fafc;
+    padding:18px;
+    margin-top:12px;
+    border-radius:12px;
+    border-right:4px solid #2563eb;
+}
+
+.job a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.skills span{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:7px 10px;
+    border-radius:20px;
+    margin:4px;
+}
+
+.hidden{
+    display:none;
+}
+
+@media(max-width:800px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .cv{
+        padding:25px;
+    }
+}
+
+@media print{
+    body{
+        background:white;
+    }
+
+    header,
+    .form-area,
+    .jobs-area,
+    button{
+        display:none!important;
+    }
+
+    .container{
+        margin:0;
+        max-width:none;
+    }
+
+    .cv{
+        box-shadow:none;
+        border-radius:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 CV Builder</h1>
+    <p>أنشئ سيرتك الذاتية الاحترافية وابحث عن وظائف مناسبة لك</p>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<!-- FORM -->
+<div class="form-area">
+
+<div class="card">
+
+<h2>👤 المعلومات الشخصية</h2>
+
+<label>الاسم الكامل</label>
+<input id="name" placeholder="مثال: أحمد محمد">
+
+<label>المسمى الوظيفي المستهدف</label>
+<input id="title" placeholder="مثال: Web Developer">
+
+<label>البريد الإلكتروني</label>
+<input id="email" type="email" placeholder="example@email.com">
+
+<label>رقم الهاتف</label>
+<input id="phone" placeholder="+962...">
+
+<label>المدينة والدولة</label>
+<input id="location" placeholder="عمّان، الأردن">
+
+<label>رابط LinkedIn</label>
+<input id="linkedin" placeholder="https://linkedin.com/in/...">
+
+<label>رابط GitHub</label>
+<input id="github" placeholder="https://github.com/...">
+
+</div>
+
+
+<div class="card">
+
+<h2>🎯 نبذة عنك</h2>
+
+<textarea id="summary"
+placeholder="اكتب نبذة مختصرة عن نفسك، خبرتك، أهدافك ومجالك..."></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>💼 الخبرة العملية</h2>
+
+<label>اسم الشركة</label>
+<input id="company" placeholder="اسم الشركة">
+
+<label>المسمى الوظيفي</label>
+<input id="jobTitle" placeholder="المسمى الوظيفي">
+
+<label>مدة العمل</label>
+<input id="jobDuration" placeholder="2024 - 2026">
+
+<label>وصف الخبرة</label>
+<textarea id="jobDescription"
+placeholder="اكتب أهم المهام والإنجازات..."></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>🎓 التعليم</h2>
+
+<label>المؤسسة التعليمية</label>
+<input id="education" placeholder="اسم الجامعة / المدرسة">
+
+<label>التخصص</label>
+<input id="major" placeholder="علوم الحاسوب">
+
+<label>الفترة</label>
+<input id="educationDate" placeholder="2023 - 2027">
+
+</div>
+
+
+<div class="card">
+
+<h2>🛠️ المهارات</h2>
+
+<label>المهارات</label>
+
+<input id="skills"
+placeholder="HTML, CSS, JavaScript, Python, Git">
+
+</div>
+
+
+<div class="card">
+
+<h2>🌍 اللغات</h2>
+
+<label>اللغات</label>
+
+<input id="languages"
+placeholder="العربية - ممتاز، الإنجليزية - جيد جداً">
+
+</div>
+
+
+<div class="card">
+
+<h2>💻 المشاريع</h2>
+
+<label>اسم المشروع</label>
+<input id="projectName" placeholder="اسم المشروع">
+
+<label>وصف المشروع</label>
+<textarea id="projectDescription"
+placeholder="اشرح المشروع والتقنيات المستخدمة"></textarea>
+
+<label>رابط المشروع</label>
+<input id="projectLink" placeholder="https://github.com/...">
+
+</div>
+
+
+<button class="primary full" onclick="generateCV()">
+✨ إنشاء CV
+</button>
+
+<button class="secondary full" onclick="findJobs()">
+🔎 البحث عن وظائف مناسبة
+</button>
+
+</div>
+
+
+<!-- CV -->
+<div>
+
+<div class="cv" id="cv">
+
+<div class="cv-header">
+
+<h1 id="cvName">اسمك هنا</h1>
+
+<p id="cvTitle">المسمى الوظيفي</p>
+
+<p>
+<span id="cvEmail">البريد الإلكتروني</span>
+ |
+<span id="cvPhone">رقم الهاتف</span>
+ |
+<span id="cvLocation">الموقع</span>
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>نبذة شخصية</h3>
+
+<p id="cvSummary">
+اكتب نبذة عن نفسك من النموذج.
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>الخبرة العملية</h3>
+
+<div id="cvExperience">
+لا توجد خبرة مضافة.
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>التعليم</h3>
+
+<div id="cvEducation">
+لا توجد معلومات تعليمية.
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>المهارات</h3>
+
+<div class="skills" id="cvSkills">
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>اللغات</h3>
+
+<p id="cvLanguages">
+</p>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>المشاريع</h3>
+
+<div id="cvProjects">
+</div>
+
+</div>
+
+
+<div class="cv-section">
+
+<h3>الروابط</h3>
+
+<p id="cvLinks"></p>
+
+</div>
+
+</div>
+
+
+<div class="card jobs-area">
+
+<h2>💼 وظائف مقترحة</h2>
+
+<div id="jobs">
+
+<p>
+أدخل معلوماتك واضغط "البحث عن وظائف مناسبة".
+</p>
+
+</div>
+
+</div>
+
+<button class="primary full" onclick="window.print()">
+🖨️ تحميل / طباعة CV كـ PDF
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<script>
+
+function value(id){
+    return document.getElementById(id).value.trim();
+}
+
+
+function generateCV(){
+
+    document.getElementById("cvName").textContent =
+        value("name") || "اسمك هنا";
+
+    document.getElementById("cvTitle").textContent =
+        value("title") || "المسمى الوظيفي";
+
+    document.getElementById("cvEmail").textContent =
+        value("email") || "البريد الإلكتروني";
+
+    document.getElementById("cvPhone").textContent =
+        value("phone") || "رقم الهاتف";
+
+    document.getElementById("cvLocation").textContent =
+        value("location") || "الموقع";
+
+    document.getElementById("cvSummary").textContent =
+        value("summary") || "اكتب نبذة عن نفسك من النموذج.";
+
+
+    // EXPERIENCE
+
+    const company = value("company");
+    const jobTitle = value("jobTitle");
+    const duration = value("jobDuration");
+    const description = value("jobDescription");
+
+    if(company || jobTitle || description){
+
+        document.getElementById("cvExperience").innerHTML = `
+            <div class="job">
+                <h4>${jobTitle || ""}</h4>
+                <strong>${company || ""}</strong>
+                <p>${duration || ""}</p>
+                <p>${description || ""}</p>
+            </div>
+        `;
+
+    }else{
+
+        document.getElementById("cvExperience").innerHTML =
+            "لا توجد خبرة مضافة.";
+
+    }
+
+
+    // EDUCATION
+
+    const education = value("education");
+    const major = value("major");
+    const educationDate = value("educationDate");
+
+    if(education || major){
+
+        document.getElementById("cvEducation").innerHTML = `
+            <div class="job">
+                <h4>${major || ""}</h4>
+                <strong>${education || ""}</strong>
+                <p>${educationDate || ""}</p>
+            </div>
+        `;
+
+    }else{
+
+        document.getElementById("cvEducation").innerHTML =
+            "لا توجد معلومات تعليمية.";
+
+    }
+
+
+    // SKILLS
+
+    const skills = value("skills")
+        .split(",")
+        .map(x => x.trim())
+        .filter(x => x);
+
+    document.getElementById("cvSkills").innerHTML =
+        skills.map(skill => `<span>${skill}</span>`).join("");
+
+
+    // LANGUAGES
+
+    document.getElementById("cvLanguages").textContent =
+        value("languages");
+
+
+    // PROJECT
+
+    const projectName = value("projectName");
+    const projectDescription = value("projectDescription");
+    const projectLink = value("projectLink");
+
+    if(projectName || projectDescription){
+
+        document.getElementById("cvProjects").innerHTML = `
+            <div class="job">
+                <h4>${projectName}</h4>
+                <p>${projectDescription}</p>
+                ${
+                    projectLink
+                    ? `<a href="${projectLink}" target="_blank">
+                        فتح المشروع
+                       </a>`
+                    : ""
+                }
+            </div>
+        `;
+
+    }else{
+
+        document.getElementById("cvProjects").innerHTML =
+            "لا توجد مشاريع مضافة.";
+
+    }
+
+
+    // LINKS
+
+    let links = "";
+
+    if(value("linkedin")){
+        links += `<a href="${value("linkedin")}" target="_blank">
+        LinkedIn
+        </a><br>`;
+    }
+
+    if(value("github")){
+        links += `<a href="${value("github")}" target="_blank">
+        GitHub
+        </a>`;
+    }
+
+    document.getElementById("cvLinks").innerHTML = links;
+
+}
+
+
+function findJobs(){
+
+    const title = value("title");
+    const major = value("major");
+    const skills = value("skills");
+
+    const query =
+        encodeURIComponent(
+            title ||
+            major ||
+            skills.split(",")[0] ||
+            "Software Developer"
+        );
+
+    document.getElementById("jobs").innerHTML = `
+
+        <div class="job">
+
+            <h3>LinkedIn Jobs</h3>
+
+            <p>
+            وظائف مرتبطة بتخصصك ومهاراتك.
+            </p>
+
+            <a
+            href="https://www.linkedin.com/jobs/search/?keywords=${query}"
+            target="_blank">
+
+            🔗 البحث في LinkedIn
+
+            </a>
+
+        </div>
+
+
+        <div class="job">
+
+            <h3>Indeed</h3>
+
+            <p>
+            البحث عن وظائف حسب المسمى الوظيفي.
+            </p>
+
+            <a
+            href="https://www.indeed.com/jobs?q=${query}"
+            target="_blank">
+
+            🔗 البحث في Indeed
+
+            </a>
+
+        </div>
+
+
+        <div class="job">
+
+            <h3>Google Jobs</h3>
+
+            <p>
+            البحث عن فرص العمل من خلال Google.
+            </p>
+
+            <a
+            href="https://www.google.com/search?q=${query}+jobs"
+            target="_blank">
+
+            🔗 البحث عن وظائف
+
+            </a>
+
+        </div>
+
+
+        <div class="job">
+
+            <h3>Bayt</h3>
+
+            <p>
+            البحث عن وظائف في المنطقة العربية.
+            </p>
+
+            <a
+            href="https://www.bayt.com/en/jordan/jobs/"
+            target="_blank">
+
+            🔗 وظائف الأردن
+
+            </a>
+
+        </div>
+
+    `;
+
+    generateCV();
+
+}
+
+</script>
+
+</body>
+  </html>
